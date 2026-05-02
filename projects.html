@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Braxton Makai</title>
+    <meta
+      name="description"
+      content="Case studies in controls, embedded systems, and robotics: TVC rocket, motion cockpit, payload targeting, and sensor fusion systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Makai</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Featured</a></li>
+          <li><a href="index.html#skills">Stack</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="eyebrow">Case Studies</p>
+        <h1>
+          Full systems, not isolated code.
+          <span>Design, simulation, firmware, and field testing.</span>
+        </h1>
+      </section>
+
+      <section id="tvc-rocket" class="panel reveal">
+        <h2>TVC Rocket</h2>
+        <p>
+          A thrust-vector-controlled rocket is unstable by default. The goal was
+          to maintain controllability across transitions like burnout while
+          handling real sensor noise and actuator limits.
+        </p>
+        <ul class="skill-tags">
+          <li><span>Controls</span></li>
+          <li><span>Teensy firmware</span></li>
+          <li><span>IMU + barometer</span></li>
+          <li><span>Simulation and flight testing</span></li>
+        </ul>
+        <p><strong>Problem</strong>: Regime transitions and disturbances caused instability and oscillation.</p>
+        <p><strong>Contribution</strong>: I designed and tuned a PD/LQR-oriented controller, implemented real-time firmware, and integrated sensing plus actuation into a single flight stack.</p>
+        <p><strong>Outcome</strong>: Stable controlled flight under test conditions with measurable reduction in angle error and oscillation.</p>
+        <p><strong>Metrics to publish</strong>: Max angle deviation, settling time, and simulation-vs-flight error.</p>
+      </section>
+
+      <section id="flight-cockpit" class="panel reveal">
+        <h2>Flight Simulator Cockpit (Multi-Axis Motion)</h2>
+        <p>
+          Built a motion-capable cockpit system that maps simulation output to
+          physical movement with deterministic timing.
+        </p>
+        <ul class="skill-tags">
+          <li><span>Control loop design</span></li>
+          <li><span>Actuator integration</span></li>
+          <li><span>Latency management</span></li>
+        </ul>
+        <p><strong>Problem</strong>: Motion quality degrades quickly under latency and mis-tuned control.</p>
+        <p><strong>Contribution</strong>: I architected the control path from simulation signal ingest to actuator commands and tuned response behavior for stability and realism.</p>
+        <p><strong>Outcome</strong>: Improved response consistency and reduced drift/jitter under repeated runs.</p>
+        <p><strong>Metrics to publish</strong>: End-to-end latency, tracking error, and repeatability variance.</p>
+      </section>
+
+      <section id="payload-targeting" class="panel reveal">
+        <h2>Payload Drop Assist / Targeting System</h2>
+        <p>
+          Developed a targeting assist workflow for precision payload release,
+          with emphasis on controllable error and practical deployment.
+        </p>
+        <ul class="skill-tags">
+          <li><span>Targeting logic</span></li>
+          <li><span>Automation</span></li>
+          <li><span>Field constraints</span></li>
+        </ul>
+        <p><strong>Problem</strong>: Environmental variability made manual targeting inconsistent.</p>
+        <p><strong>Contribution</strong>: I built the estimate-and-release pipeline and refined it with iterative field data.</p>
+        <p><strong>Outcome</strong>: Higher drop consistency and tighter error bounds compared to baseline manual operation.</p>
+        <p><strong>Metrics to publish</strong>: Mean drop error radius and error reduction versus baseline.</p>
+      </section>
+
+      <section id="sensor-fusion" class="panel reveal">
+        <h2>Embedded Sensor Fusion System</h2>
+        <p>
+          Built an embedded estimation layer combining IMU and barometric data
+          for cleaner state feedback in noisy conditions.
+        </p>
+        <ul class="skill-tags">
+          <li><span>Sensor fusion</span></li>
+          <li><span>Embedded C/C++</span></li>
+          <li><span>Noise and drift handling</span></li>
+        </ul>
+        <p><strong>Problem</strong>: Raw sensors produced noisy and drifting state estimates.</p>
+        <p><strong>Contribution</strong>: I designed and tested filtering/fusion logic tuned to realistic motion and vibration profiles.</p>
+        <p><strong>Outcome</strong>: More stable attitude/altitude estimates for downstream control loops.</p>
+        <p><strong>Metrics to publish</strong>: RMS error, drift rate, and estimate variance before vs after fusion.</p>
+      </section>
+
+      <section id="ftc-robotics" class="panel reveal">
+        <h2>FTC Robotics (In Development)</h2>
+        <p>
+          Competition robotics work focused on control reliability and integrated
+          subsystem behavior under match constraints.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Makai. Built for technical signal, not template filler.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
