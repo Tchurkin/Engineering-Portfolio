@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Engineering Portfolio</title>
+    <meta
+      name="description"
+      content="Engineering portfolio featuring projects, skills, and contact information."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">YN</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <p class="eyebrow">Mechanical + Software Engineering</p>
+        <h1>
+          Building practical systems
+          <span>that solve real-world problems.</span>
+        </h1>
+        <p class="hero-copy">
+          I design and build robust engineering solutions across hardware,
+          software, and data-driven workflows.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">See Projects</a>
+          <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+        </div>
+      </section>
+
+      <section id="about" class="panel reveal">
+        <h2>About</h2>
+        <p>
+          I am an engineer focused on turning constraints into elegant outcomes.
+          My work combines analytical thinking, prototyping, and implementation
+          to ship dependable solutions.
+        </p>
+      </section>
+
+      <section id="projects" class="panel reveal">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <p>Selected work across design, automation, and optimization.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Autonomous Test Rig</h3>
+            <p>
+              Built a sensor-integrated rig to automate stress testing and
+              reduce manual calibration time.
+            </p>
+            <ul>
+              <li>Python</li>
+              <li>Embedded Systems</li>
+              <li>Data Logging</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <h3>Production KPI Dashboard</h3>
+            <p>
+              Developed a live dashboard for manufacturing metrics to accelerate
+              bottleneck detection.
+            </p>
+            <ul>
+              <li>JavaScript</li>
+              <li>SQL</li>
+              <li>Visualization</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <h3>Thermal Optimization Study</h3>
+            <p>
+              Modeled thermal behavior and proposed redesigns that improved
+              energy efficiency under load.
+            </p>
+            <ul>
+              <li>Simulation</li>
+              <li>MATLAB</li>
+              <li>CAD</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="panel reveal">
+        <h2>Skills</h2>
+        <div class="skill-tags">
+          <span>Systems Design</span>
+          <span>CAD</span>
+          <span>Finite Element Analysis</span>
+          <span>Python</span>
+          <span>C++</span>
+          <span>Controls</span>
+          <span>Data Analysis</span>
+          <span>Rapid Prototyping</span>
+        </div>
+      </section>
+
+      <section id="contact" class="panel reveal">
+        <h2>Contact</h2>
+        <p>
+          Interested in collaborating? Reach out and I will get back to you.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:youremail@example.com">youremail@example.com</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a href="https://github.com" target="_blank" rel="noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Your Name. Built with intention.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
