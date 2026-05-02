@@ -139,6 +139,21 @@ h1 span {
   color: var(--muted);
 }
 
+.hero-visual {
+  margin: 0 0 1.2rem;
+  max-width: 680px;
+  border-radius: 0.78rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +226,15 @@ h2 {
 }
 
 .project-card p {
+  margin-bottom: 0.7rem;
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.55rem;
+  border: 1px solid #2d4768;
   margin-bottom: 0.7rem;
 }
 
