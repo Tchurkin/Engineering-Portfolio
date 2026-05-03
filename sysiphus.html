@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sysiphus | Braxton Makai</title>
+    <meta
+      name="description"
+      content="Sysiphus propulsive landing rocket project focused on trajectory control and autonomous flight logic."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Makai</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li><a href="sysiphus.html">Sysiphus</a></li>
+          <li><a href="ares.html">Ares</a></li>
+          <li><a href="liftscope.html">LiftScope</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="scroll-scrub-banner">
+        <div class="scroll-scrub-track">
+          <video
+            class="hero-banner-video"
+            data-scroll-scrub
+            data-start-time="2.5"
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Sysiphus launch pad camera footage"
+          >
+            <source src="media/Sysiphus/Launch%20Pad%20Cam.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="hero-banner-overlay">
+            <p class="eyebrow">Sysiphus Launch Cam</p>
+            <h1>
+              Scroll to scrub the launch timeline.
+              <span>Down moves forward. Up rewinds.</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero reveal">
+        <p class="eyebrow">Sysiphus</p>
+        <h1>
+          Propulsive landing rocket.
+          <span>From stabilization to full trajectory control.</span>
+        </h1>
+      </section>
+
+      <section class="panel reveal">
+        <img
+          class="project-thumb"
+          src="media/Sysiphus/S1%20TVC%20static%20fire.jpg"
+          alt="Sysiphus S1 TVC static fire test"
+          width="640"
+          height="360"
+          loading="lazy"
+        />
+        <p><strong>Category</strong>: Advanced Controls / Autonomous Systems / Aerospace</p>
+        <p><strong>Status</strong>: In progress</p>
+        <p><strong>Problem</strong>: Controlled propulsive landing requires accurate real-time control of position, velocity, and orientation under tight constraints where small errors compound quickly.</p>
+        <p><strong>My role</strong>: Designing full flight architecture (ascent, descent, landing), landing-burn control strategy, multi-sensor state estimation, staged event logic (cutoff, re-ignition, landing legs, parachute backup), and expanded descent simulation.</p>
+        <p><strong>Expected outcomes</strong>: Controlled descent and landing attempts, quantified trajectory tracking metrics, and autonomous in-flight decision logic.</p>
+      </section>
+
+      <section class="panel reveal">
+        <h2>LinkedIn Linkage</h2>
+        <p>Project direction is grounded in post-flight transition analysis from Ares.</p>
+        <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">See burnout-transition analysis</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Makai.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

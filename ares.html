@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ares | Braxton Makai</title>
+    <meta
+      name="description"
+      content="Ares thrust vector controlled model rocket project details and development evidence."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Makai</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li><a href="sysiphus.html">Sysiphus</a></li>
+          <li><a href="ares.html">Ares</a></li>
+          <li><a href="liftscope.html">LiftScope</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="eyebrow">Ares</p>
+        <h1>
+          Thrust vector controlled rocket.
+          <span>Closed-loop stabilization on unstable flight hardware.</span>
+        </h1>
+      </section>
+
+      <section class="panel reveal">
+        <img
+          class="project-thumb"
+          src="media/Ares/Ares%20pad%20cam%20launch.png"
+          alt="Ares rocket on the launch pad"
+          width="480"
+          height="360"
+          loading="lazy"
+        />
+        <p><strong>Category</strong>: Controls / Embedded Systems / Aerospace</p>
+        <p><strong>Status</strong>: Completed, iterated through multiple flight tests</p>
+        <p><strong>Problem</strong>: Model rockets are inherently unstable when actively controlled. Stability during powered flight requires fast sensing, robust estimation, and reliable control under changing dynamics.</p>
+        <p><strong>My role</strong>: Designed and implemented the controller (initial PD, moving toward more advanced methods), wrote embedded flight software on Teensy 4.1, integrated BNO055 + DPS310 sensors, designed TVC actuation, built PCB/wiring/structure, and ran simulation-to-real testing.</p>
+        <p><strong>Results</strong>: Achieved stable controlled ascent with TVC and characterized instability behavior at burnout transitions.</p>
+      </section>
+
+      <section class="panel reveal">
+        <h2>LinkedIn Evidence</h2>
+        <div class="linkedin-list">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Flight-data analysis: powered stability and burnout divergence</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Iteration log: gimbal redesign and sensor calibration fixes</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447479229190942720/" target="_blank" rel="noreferrer">Roll dynamics and phase lag behavior</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445560710216032257/" target="_blank" rel="noreferrer">Best stabilizing launch clip and recovery failure analysis</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Makai.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

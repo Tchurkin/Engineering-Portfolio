@@ -6,7 +6,7 @@
     <title>Projects | Braxton Makai</title>
     <meta
       name="description"
-      content="Case studies in controls, embedded systems, and robotics: TVC rocket, motion cockpit, payload targeting, and sensor fusion systems."
+      content="Case studies in controls, embedded systems, and aerospace autonomy: Ares TVC Rocket, Sisyphus landing rocket, and FTC robotics systems engineering."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,11 +24,13 @@
       <a class="brand" href="index.html">Braxton Makai</a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html#projects">Featured</a></li>
-          <li><a href="index.html#skills">Stack</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li><a href="sysiphus.html">Sysiphus</a></li>
+          <li><a href="ares.html">Ares</a></li>
+          <li><a href="liftscope.html">LiftScope</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
       </nav>
@@ -38,13 +40,17 @@
       <section class="hero reveal">
         <p class="eyebrow">Case Studies</p>
         <h1>
-          Full systems, not isolated code.
-          <span>Design, simulation, firmware, and field testing.</span>
+          Controls and embedded systems in unstable environments.
+          <span>From active stabilization to autonomous trajectory control.</span>
         </h1>
+        <p class="hero-copy">
+          Public build logs, media, and milestone updates live on
+          <a class="project-link" href="https://www.linkedin.com/in/braxton-herold/" target="_blank" rel="noreferrer">LinkedIn</a>.
+        </p>
       </section>
 
       <section id="tvc-rocket" class="panel reveal">
-        <h2>TVC Rocket</h2>
+        <h2>Ares - Thrust Vector Controlled Model Rocket</h2>
         <img
           class="project-thumb"
           src="https://static.wixstatic.com/media/46a88c_2cb56ee7c8504c78914db19de6f7c192~mv2.gif"
@@ -54,108 +60,85 @@
           loading="lazy"
         />
         <p>
-          A thrust-vector-controlled rocket is unstable by default. The goal was
-          to maintain controllability across transitions like burnout while
-          handling real sensor noise and actuator limits.
+          A fully self-stabilizing model rocket using thrust vector control
+          (TVC). The system actively adjusts engine direction in real time to
+          maintain stability during ascent.
         </p>
         <ul class="skill-tags">
-          <li><span>Controls</span></li>
-          <li><span>Teensy firmware</span></li>
-          <li><span>IMU + barometer</span></li>
-          <li><span>Simulation and flight testing</span></li>
+          <li><span>Category: Controls / Embedded Systems / Aerospace</span></li>
+          <li><span>Status: Completed and iterated through flight tests</span></li>
         </ul>
-        <p><strong>Problem</strong>: Regime transitions and disturbances caused instability and oscillation.</p>
-        <p><strong>Contribution</strong>: I designed and tuned a PD/LQR-oriented controller, implemented real-time firmware, and integrated sensing plus actuation into a single flight stack.</p>
-        <p><strong>Outcome</strong>: Stable controlled flight under test conditions with measurable reduction in angle error and oscillation.</p>
-        <p><strong>Metrics to publish</strong>: Max angle deviation, settling time, and simulation-vs-flight error.</p>
+        <p><strong>Problem</strong>: Model rockets are inherently unstable when actively controlled, especially with thrust vectoring. Stability during powered flight requires fast sensing, accurate state estimation, and robust control under changing dynamics.</p>
+        <p><strong>My role</strong>: Designed and implemented the control system (initial PD, moving toward more advanced approaches), wrote embedded flight software on Teensy 4.1, integrated IMU + barometric sensors, designed the TVC actuator system, built the full hardware stack (PCB, wiring, structure), and ran simulation-to-real testing.</p>
+        <p><strong>Core technologies</strong>: Embedded C/C++, MATLAB/Simulink, BNO055 IMU, DPS310 barometer, real-time control loops, PID/PD control.</p>
+        <p><strong>Key challenges</strong>: Sensor noise and latency, actuator lag and mechanical limits, instability at motor burnout, and mapping simulation behavior to real flight.</p>
+        <p><strong>Results</strong>: Achieved stable controlled ascent using TVC, demonstrated closed-loop control on a physically unstable system, and identified burnout instability as a key boundary for simple models.</p>
+        <p><strong>Key insight</strong>: Controller performance degrades at regime transitions, motivating a shift toward model-based and observer-backed control methods.</p>
+        <p><strong>LinkedIn evidence</strong>: Ares work is documented through flight-data and launch posts.</p>
+        <div class="linkedin-list">
+          <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Flight-data analysis: powered stability, burnout divergence</a>
+          <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Iteration log: gimbal redesign, calibration fixes, parachute improvements</a>
+          <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7447479229190942720/" target="_blank" rel="noreferrer">Roll dynamics post: TVC phase lag and inertia effects</a>
+          <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7445560710216032257/" target="_blank" rel="noreferrer">Best stabilizing launch video + recovery failure analysis</a>
+        </div>
       </section>
 
-      <section id="flight-cockpit" class="panel reveal">
-        <h2>Flight Simulator Cockpit (Multi-Axis Motion)</h2>
+      <section id="sisyphus-landing" class="panel reveal">
+        <h2>Sisyphus - Propulsive Landing Model Rocket (In Progress)</h2>
         <img
           class="project-thumb"
           src="https://static.wixstatic.com/media/46a88c_045d9ad6b999493e9d798c9f636187da~mv2.gif"
-          alt="Motion system behavior test animation"
+          alt="Rocket sequence representing controlled descent concept"
           width="720"
           height="406"
           loading="lazy"
         />
         <p>
-          Built a motion-capable cockpit system that maps simulation output to
-          physical movement with deterministic timing.
+          A rocket platform designed for controlled, propulsive landing using
+          thrust vector control. This extends Ares from stabilization into full
+          trajectory control and landing.
         </p>
         <ul class="skill-tags">
-          <li><span>Control loop design</span></li>
-          <li><span>Actuator integration</span></li>
-          <li><span>Latency management</span></li>
+          <li><span>Category: Advanced Controls / Autonomous Systems / Aerospace</span></li>
+          <li><span>Status: In progress</span></li>
         </ul>
-        <p><strong>Problem</strong>: Motion quality degrades quickly under latency and mis-tuned control.</p>
-        <p><strong>Contribution</strong>: I architected the control path from simulation signal ingest to actuator commands and tuned response behavior for stability and realism.</p>
-        <p><strong>Outcome</strong>: Improved response consistency and reduced drift/jitter under repeated runs.</p>
-        <p><strong>Metrics to publish</strong>: End-to-end latency, tracking error, and repeatability variance.</p>
+        <p><strong>Problem</strong>: Propulsive landing requires real-time control of position, velocity, and orientation under tight constraints where small errors compound quickly.</p>
+        <p><strong>My role</strong>: Designing full flight architecture across ascent, descent, and landing phases; developing landing-burn control strategy; integrating multi-sensor state estimation; implementing staged event logic (cutoff, re-ignition, landing legs, parachute backup); and expanding simulation to include descent dynamics.</p>
+        <p><strong>Core technologies</strong>: Embedded C/C++, sensor fusion, real-time state estimation, advanced control methods moving beyond PD toward LQR/observer-based approaches, staged flight event logic.</p>
+        <p><strong>Key challenges</strong>: Descent state estimation accuracy, landing burn timing, phase transitions, actuator/sensor delays, and safety redundancy.</p>
+        <p><strong>Expected outcomes</strong>: Controlled descent and landing attempt, quantified trajectory tracking performance, and autonomous in-flight decision-making demonstration.</p>
+        <p><strong>Why it matters</strong>: This moves from stabilizing attitude to controlling full trajectory, a major complexity jump aligned with real aerospace autonomy problems.</p>
+        <p><strong>LinkedIn evidence</strong>: This project direction is driven by Ares post-flight transition analysis and control-boundary data.</p>
+        <p><a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">See transition analysis driving the Sisyphus architecture</a></p>
       </section>
 
-      <section id="payload-targeting" class="panel reveal">
-        <h2>Payload Drop Assist / Targeting System</h2>
+      <section id="ftc-robotics" class="panel reveal">
+        <h2>FTC Robotics Team (Founder) - Emerging</h2>
         <img
           class="project-thumb"
           src="https://static.wixstatic.com/media/46a88c_554a635b80f1494f82e3e426b2734607~mv2.jpg/v1/fill/w_756,h_564,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1962%20(1)_JPG.jpg"
-          alt="Flight computer and control hardware"
+          alt="Robotics electronics and systems integration hardware"
           width="720"
           height="538"
           loading="lazy"
         />
         <p>
-          Developed a targeting assist workflow for precision payload release,
-          with emphasis on controllable error and practical deployment.
+          Starting and leading a robotics team focused on competitive system
+          design, build quality, and technical execution under deadlines.
         </p>
         <ul class="skill-tags">
-          <li><span>Targeting logic</span></li>
-          <li><span>Automation</span></li>
-          <li><span>Field constraints</span></li>
+          <li><span>Category: Robotics / Systems Engineering</span></li>
+          <li><span>Status: Early stage</span></li>
         </ul>
-        <p><strong>Problem</strong>: Environmental variability made manual targeting inconsistent.</p>
-        <p><strong>Contribution</strong>: I built the estimate-and-release pipeline and refined it with iterative field data.</p>
-        <p><strong>Outcome</strong>: Higher drop consistency and tighter error bounds compared to baseline manual operation.</p>
-        <p><strong>Metrics to publish</strong>: Mean drop error radius and error reduction versus baseline.</p>
-      </section>
-
-      <section id="sensor-fusion" class="panel reveal">
-        <h2>Embedded Sensor Fusion System</h2>
-        <img
-          class="project-thumb"
-          src="https://static.wixstatic.com/media/46a88c_ea97df440417481c9a6357611a0bcac5~mv2.jpg/v1/fill/w_756,h_566,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-07-09%20182251_edited.jpg"
-          alt="Firmware and control code capture"
-          width="720"
-          height="539"
-          loading="lazy"
-        />
-        <p>
-          Built an embedded estimation layer combining IMU and barometric data
-          for cleaner state feedback in noisy conditions.
-        </p>
-        <ul class="skill-tags">
-          <li><span>Sensor fusion</span></li>
-          <li><span>Embedded C/C++</span></li>
-          <li><span>Noise and drift handling</span></li>
-        </ul>
-        <p><strong>Problem</strong>: Raw sensors produced noisy and drifting state estimates.</p>
-        <p><strong>Contribution</strong>: I designed and tested filtering/fusion logic tuned to realistic motion and vibration profiles.</p>
-        <p><strong>Outcome</strong>: More stable attitude/altitude estimates for downstream control loops.</p>
-        <p><strong>Metrics to publish</strong>: RMS error, drift rate, and estimate variance before vs after fusion.</p>
-      </section>
-
-      <section id="ftc-robotics" class="panel reveal">
-        <h2>FTC Robotics (In Development)</h2>
-        <p>
-          Competition robotics work focused on control reliability and integrated
-          subsystem behavior under match constraints.
-        </p>
+        <p><strong>My role</strong>: Founder and technical lead responsible for system direction, architecture decisions, and team build process.</p>
+        <p><strong>Focus</strong>: Controls, embedded systems, and practical real-world hardware reliability.</p>
+        <p><strong>LinkedIn evidence</strong>: Team affiliation and systems focus are represented on profile and org context.</p>
+        <p><a class="project-link" href="https://www.linkedin.com/in/braxton-herold/" target="_blank" rel="noreferrer">Open profile for FTC and technical focus context</a></p>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai. Built for technical signal, not template filler.</p>
+      <p><span id="year"></span> Braxton Makai.</p>
     </footer>
 
     <script src="script.js"></script>
