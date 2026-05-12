@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Sisyphus — Flight Stages | Braxton Herold</title>
+    <meta name="description" content="Software and control algorithms for the Sisyphus propulsive landing rocket." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares page-sysiphus-code">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="panel code-suite" style="padding: 1.4rem 1.4rem 0; margin-bottom: 0;">
+        <p class="eyebrow">Sisyphus — Subsystem</p>
+        <h1>Flight Stages</h1>
+        <p class="code-suite-summary">The flight software runs through three stages: countdown, stabilizing ascent, and descent/recovery.</p>
+        <ul class="code-bullets" style="margin-bottom: 0;">
+          <li>Software tells the flight computer how to react to sensor inputs and command hardware outputs.</li>
+          <li>Code coordinates countdown, powered ascent, descent detection, and recovery actions.</li>
+          <li>Real-time logic links IMU/barometer estimates to TVC control and pyro events.</li>
+        </ul>
+      </section>
+
+      <section class="panel reveal" style="margin-top: 0.7rem;">
+        <h2>Countdown</h2>
+        <ul class="code-bullets">
+          <li>A multi-press gate reduces accidental launch events.</li>
+          <li>An audible buzzer countdown and LED cues signal launch timing.</li>
+          <li>Gyro offsets and barometric zero are finalized before ignition.</li>
+          <li>At countdown completion, the ignition channel is fired.</li>
+        </ul>
+        <div class="code-stage-media-grid">
+          <figure class="flight-computer-media-card code-stage-media">
+            <img
+              class="project-thumb code-stage-thumb--portrait"
+              src="media/Sysiphus/Setting%20up%20camera%20next%20to%20pad.JPG"
+              alt="Sisyphus setup next to the pad during countdown"
+              width="3024"
+              height="4032"
+              loading="lazy"
+            />
+            <figcaption>Pad-side setup and final checks during the countdown stage.</figcaption>
+          </figure>
+          <figure class="flight-computer-media-card code-stage-media">
+            <img
+              class="project-thumb code-stage-thumb--portrait"
+              src="media/Sysiphus/Idle%20on%20the%20Pad.jpg"
+              alt="Sisyphus idle on the pad during countdown"
+              width="3024"
+              height="4032"
+              loading="lazy"
+            />
+            <figcaption>Idle on the pad before ignition.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Stabilizing Ascent</h2>
+        <ul class="code-bullets">
+          <li>Dual-axis TVC runs a PD stabilization loop using angle and angular-rate feedback.</li>
+          <li>Control outputs are constrained and mapped to servo geometry for stable actuation.</li>
+          <li>Sensor fusion and altitude-rate tracking inform stage transitions and safety checks.</li>
+          <li>If tilt exceeds safe bounds, emergency recovery logic can be triggered.</li>
+        </ul>
+        <div class="code-stage-media-grid">
+          <figure class="flight-computer-media-card code-stage-media">
+            <img
+              class="project-thumb code-stage-thumb--portrait"
+              src="media/Sysiphus/Flames%20cool%20launch.png"
+              alt="Sisyphus flames cool launch during stabilized flight"
+              width="2239"
+              height="1246"
+              loading="lazy"
+            />
+            <figcaption>Flames cool launch at the start of stabilizing ascent.</figcaption>
+          </figure>
+          <figure class="flight-computer-media-card code-stage-media">
+            <img
+              class="project-thumb code-stage-thumb--portrait code-stage-thumb--lr-only"
+              src="media/Sysiphus/Rocket%20Stabilizing%20Ascent.png"
+              alt="Sisyphus stabilizing rocket during ascent"
+              width="1920"
+              height="1080"
+              loading="lazy"
+            />
+            <figcaption>Stabilizing rocket with active TVC during ascent.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Descent and Recovery</h2>
+        <ul class="code-bullets">
+          <li>Once descent is detected, the controller transitions to recovery behavior.</li>
+          <li>Recovery development is currently split between validated parachute recovery and in-progress propulsive recovery.</li>
+          <li>Final status cues are provided through onboard buzzer and LEDs.</li>
+        </ul>
+        <div class="code-recovery-split">
+          <section class="code-recovery-block">
+            <h3>Parachute Recovery</h3>
+            <ul class="code-bullets">
+              <li>Parachute deployment is currently the flight-proven recovery path.</li>
+              <li>Descent detection and staged recovery events are integrated in the live flight code.</li>
+              <li>This mode provides a reliable fallback while propulsive recovery matures.</li>
+            </ul>
+            <div class="code-stage-media-grid">
+              <figure class="flight-computer-media-card code-stage-media">
+                <img
+                  class="project-thumb code-stage-thumb--portrait"
+                  src="media/Sysiphus/Parachute%20Descent.jpg"
+                  alt="Sisyphus parachute descent during recovery"
+                  width="3024"
+                  height="4032"
+                  loading="lazy"
+                />
+                <figcaption>Parachute descent during the recovery stage.</figcaption>
+              </figure>
+              <figure class="flight-computer-media-card code-stage-media">
+                <img
+                  class="project-thumb code-stage-thumb--portrait"
+                  src="media/Sysiphus/Rocket%20destroyed%20on%20ground.JPG"
+                  alt="Sisyphus rocket destroyed on the ground after recovery"
+                  width="3024"
+                  height="4032"
+                  loading="lazy"
+                />
+                <figcaption>Post-flight condition: rocket on the ground after impact.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="code-recovery-block code-recovery-block--propulsive">
+            <h3>Propulsive Recovery (In Progress)</h3>
+            <ul class="code-bullets">
+              <li>This recovery mode is actively under development and is not yet flight-proven.</li>
+              <li>Current work focuses on transitioning from parachute-only recovery to powered terminal recovery.</li>
+              <li>Low-altitude state transitions, throttle-window timing, and attitude constraints are still being iterated.</li>
+              <li>Target outcome: controlled touchdown using active TVC authority through the final descent phase.</li>
+            </ul>
+            <div class="code-stage-media-grid">
+              <figure class="flight-computer-media-card code-stage-media code-stage-media--full tvc-static-block" data-tvc-static-preview>
+                <video
+                  class="project-thumb code-stage-thumb--portrait tvc-static-video"
+                  data-tvc-static-video
+                  src="media/Sysiphus/Landing%20Legs%20Deployment%20test.mp4"
+                  aria-label="Sisyphus landing leg deployment test video"
+                  playsinline
+                  muted
+                  loop
+                  preload="metadata"
+                ></video>
+                <figcaption>Landing leg deployment development test video (in progress). Hover to play.</figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <a class="btn page-back-btn" href="sysiphus.html">← Back to Sisyphus</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

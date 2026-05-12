@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Sisyphus Development | Braxton Herold</title>
+    <meta
+      name="description"
+      content="Detailed Sisyphus development roadmap: controls architecture, descent strategy, and test progression."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="panel reveal dev-subpage-hero">
+        <p class="eyebrow">Sisyphus Development</p>
+        <h1>
+          Landing-focused architecture from first principles to integrated testing.
+          <span>Trajectory control, autonomy logic, and descent systems integration.</span>
+        </h1>
+        <p>
+          Modeled after the clearer project deep-dives on AeroFusion, this page breaks Sisyphus into
+          phased development chunks with visible progress markers and evidence links.
+        </p>
+        <div class="dev-subpage-links">
+          <a href="#roadmap">Roadmap</a>
+          <a href="#architecture">System Architecture</a>
+          <a href="#test-plan">Test Plan</a>
+          <a href="#evidence">Evidence Links</a>
+        </div>
+      </section>
+
+      <section id="roadmap" class="panel reveal">
+        <h2>Roadmap</h2>
+        <div class="dev-milestone-grid">
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Stage 01</p>
+            <h3>Ascent and State Backbone</h3>
+            <p>Define flight-state transitions, estimator inputs, and critical telemetry needed for landing decisions.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Stage 02</p>
+            <h3>Descent Guidance Logic</h3>
+            <p>Build and validate descent trajectory shaping with fuel-margin and attitude constraints.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Stage 03</p>
+            <h3>Landing Burn Controller</h3>
+            <p>Implement coupled vertical/lateral control with thrust-vector authority and event timing checks.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Stage 04</p>
+            <h3>Autonomous Recovery Logic</h3>
+            <p>Integrate fallback triggers: cutoff criteria, leg deployment window, and parachute contingency mode.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="panel reveal">
+        <h2>System Architecture</h2>
+        <div class="dev-milestone-grid">
+          <article class="dev-milestone-card">
+            <h3>Flight Modes</h3>
+            <p>Prelaunch, boost, coast, re-ignition, terminal descent, and touchdown verification states.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>Estimator Stack</h3>
+            <p>Multi-sensor fusion strategy to estimate position, vertical velocity, and attitude under noisy dynamics.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>Control Allocation</h3>
+            <p>Distribute control effort across thrust vectoring and event scheduling without violating actuator limits.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>Safety Layer</h3>
+            <p>Abort/fallback logic gates for scenarios where descent solution quality falls below thresholds.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="test-plan" class="panel reveal">
+        <h2>Test Plan Snapshot</h2>
+        <div class="dev-table-wrap">
+          <table class="dev-table">
+            <thead>
+              <tr>
+                <th>Test Block</th>
+                <th>Objective</th>
+                <th>Primary Metric</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sim A</td>
+                <td>Descent guidance convergence</td>
+                <td>Landing-point error band</td>
+                <td>In progress</td>
+              </tr>
+              <tr>
+                <td>HIL B</td>
+                <td>Estimator timing and data integrity</td>
+                <td>State lag under transients</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>Static C</td>
+                <td>Landing-burn throttle profile</td>
+                <td>Command-tracking residuals</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>Flight D</td>
+                <td>Integrated terminal descent</td>
+                <td>Touchdown velocity envelope</td>
+                <td>Future campaign</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="evidence" class="panel reveal">
+        <h2>Evidence and Related Posts</h2>
+        <div class="linkedin-list">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Burnout transition analysis informing Sisyphus descent planning</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Iteration notes: hardware constraints that influence next-gen architecture</a>
+        </div>
+        <p class="proof-note"><a class="project-link" href="sysiphus.html">Back to Sisyphus overview</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

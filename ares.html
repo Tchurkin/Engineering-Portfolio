@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ares | Braxton Makai</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Ares | Braxton Herold</title>
     <meta
       name="description"
       content="Ares thrust vector controlled model rocket project details and development evidence."
@@ -16,20 +17,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-ares">
+  <body class="theme-ares page-ares">
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -37,15 +51,54 @@
     </header>
 
     <main>
-      <section class="hero reveal">
-        <p class="eyebrow">Ares</p>
-        <h1>
-          Thrust vector controlled rocket.
-          <span>Closed-loop stabilization on unstable flight hardware.</span>
-        </h1>
+      <section class="scroll-scrub-banner">
+        <div class="scroll-scrub-track">
+          <div class="sysiphus-hero-headline" aria-hidden="true">
+            <p class="eyebrow">Project</p>
+            <h1>Ares</h1>
+          </div>
+          <canvas class="hero-banner-canvas" data-scroll-scrub-canvas aria-hidden="true"></canvas>
+          <video
+            class="hero-banner-video"
+            data-scroll-scrub
+            data-start-time="0"
+            data-scrub-speed="2.2"
+            data-video-progress-exponent="2.6"
+            data-video-progress-mix="0.92"
+            data-frame-pattern="media/Ares/frames/launch-cam-slow/frame-{index}.webp"
+            data-frame-count="662"
+            data-frame-digits="4"
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Ares launch camera footage"
+          >
+            <source src="media/Ares/Ares%20Launch%20Cam.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="scrub-scroll-hints" aria-hidden="true">
+            <div class="scrub-scroll-hint scrub-scroll-hint--left">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="scrub-scroll-hint scrub-scroll-hint--right">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="panel reveal">
+      <section class="panel reveal sysiphus-overview-panel">
+        <div class="sysiphus-panel-title">
+          <p class="eyebrow">Ares</p>
+          <h1>
+            Thrust vector controlled rocket.
+            <span>Closed-loop stabilization on unstable flight hardware.</span>
+          </h1>
+        </div>
         <img
           class="project-thumb"
           src="media/Ares/Ares%20pad%20cam%20launch.png"
@@ -55,6 +108,7 @@
           loading="lazy"
         />
         <p><strong>Category</strong>: Controls / Embedded Systems / Aerospace</p>
+        <p><strong>Timeline</strong>: February 2022 - March 2024</p>
         <p><strong>Status</strong>: Completed, iterated through multiple flight tests</p>
         <p><strong>Problem</strong>: Model rockets are inherently unstable when actively controlled. Stability during powered flight requires fast sensing, robust estimation, and reliable control under changing dynamics.</p>
         <p><strong>My role</strong>: Designed and implemented the controller (initial PD, moving toward more advanced methods), wrote embedded flight software on Teensy 4.1, integrated BNO055 + DPS310 sensors, designed TVC actuation, built PCB/wiring/structure, and ran simulation-to-real testing.</p>
@@ -62,18 +116,31 @@
       </section>
 
       <section class="panel reveal">
-        <h2>LinkedIn Evidence</h2>
-        <div class="linkedin-list">
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Flight-data analysis: powered stability and burnout divergence</a>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Iteration log: gimbal redesign and sensor calibration fixes</a>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447479229190942720/" target="_blank" rel="noreferrer">Roll dynamics and phase lag behavior</a>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445560710216032257/" target="_blank" rel="noreferrer">Best stabilizing launch clip and recovery failure analysis</a>
+        <p class="eyebrow">Explore by subsystem</p>
+        <div class="subsystem-cards">
+          <a class="subsystem-card" href="ares-tvc.html">
+            <img src="media/Ares/A5%20TVC%20static%20fire.jpg" alt="Ares TVC static fire development test" loading="lazy" />
+            <div class="subsystem-card-body">
+              <p class="eyebrow">Thrust Vector Control</p>
+              <h3>TVC Development</h3>
+              <p>Mechanical gimbal iterations, servo authority tuning, and closed-loop PD stabilization across flight tests.</p>
+            </div>
+          </a>
+          <a class="subsystem-card" href="ares-pcb.html">
+            <img src="media/Ares/Rectangle%201.0%20flight%20computer.JPG" alt="Ares flight computer and PCB development" loading="lazy" />
+            <div class="subsystem-card-body">
+              <p class="eyebrow">Avionics</p>
+              <h3>PCB Development</h3>
+              <p>Teensy-centered flight electronics integration, sensor bring-up, wiring reliability, and board-level iteration.</p>
+            </div>
+          </a>
         </div>
       </section>
+
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

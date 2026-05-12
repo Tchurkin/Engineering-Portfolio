@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sysiphus | Braxton Makai</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Sisyphus | Braxton Herold</title>
     <meta
       name="description"
-      content="Sysiphus propulsive landing rocket project focused on trajectory control and autonomous flight logic."
+      content="Sisyphus propulsive landing rocket project focused on trajectory control and autonomous flight logic."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,20 +17,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-ares">
+  <body class="theme-ares page-sysiphus">
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -39,46 +53,60 @@
     <main>
       <section class="scroll-scrub-banner">
         <div class="scroll-scrub-track">
+          <div class="sysiphus-hero-headline" aria-hidden="true">
+            <p class="eyebrow">Project</p>
+            <h1>Sisyphus</h1>
+          </div>
+          <canvas class="hero-banner-canvas" data-scroll-scrub-canvas aria-hidden="true"></canvas>
           <video
             class="hero-banner-video"
             data-scroll-scrub
-            data-start-time="2.5"
+            data-start-time="18.5"
+            data-scrub-speed="2.2"
+            data-frame-pattern="media/Sysiphus/frames/launch-pad-cam/frame-{index}.webp"
+            data-frame-count="284"
+            data-frame-digits="4"
             muted
             playsinline
             preload="auto"
-            aria-label="Sysiphus launch pad camera footage"
+            aria-label="Sisyphus launch pad camera footage"
           >
             <source src="media/Sysiphus/Launch%20Pad%20Cam.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div class="hero-banner-overlay">
-            <p class="eyebrow">Sysiphus Launch Cam</p>
-            <h1>
-              Scroll to scrub the launch timeline.
-              <span>Down moves forward. Up rewinds.</span>
-            </h1>
+          <div class="scrub-scroll-hints" aria-hidden="true">
+            <div class="scrub-scroll-hint scrub-scroll-hint--left">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="scrub-scroll-hint scrub-scroll-hint--right">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="hero reveal">
-        <p class="eyebrow">Sysiphus</p>
-        <h1>
-          Propulsive landing rocket.
-          <span>From stabilization to full trajectory control.</span>
-        </h1>
-      </section>
-
-      <section class="panel reveal">
+      <section class="panel reveal sysiphus-overview-panel">
+        <div class="sysiphus-panel-title">
+          <p class="eyebrow">Sisyphus</p>
+          <h1>
+            Propulsive landing rocket.
+            <span>From stabilization to full trajectory control.</span>
+          </h1>
+        </div>
         <img
           class="project-thumb"
-          src="media/Sysiphus/S1%20TVC%20static%20fire.jpg"
-          alt="Sysiphus S1 TVC static fire test"
+          src="media/Sysiphus/TVC%20on%20table.png"
+          alt="Sisyphus TVC on table"
           width="640"
           height="360"
           loading="lazy"
         />
         <p><strong>Category</strong>: Advanced Controls / Autonomous Systems / Aerospace</p>
+        <p><strong>Timeline</strong>: August 2024 - Present</p>
         <p><strong>Status</strong>: In progress</p>
         <p><strong>Problem</strong>: Controlled propulsive landing requires accurate real-time control of position, velocity, and orientation under tight constraints where small errors compound quickly.</p>
         <p><strong>My role</strong>: Designing full flight architecture (ascent, descent, landing), landing-burn control strategy, multi-sensor state estimation, staged event logic (cutoff, re-ignition, landing legs, parachute backup), and expanded descent simulation.</p>
@@ -86,14 +114,38 @@
       </section>
 
       <section class="panel reveal">
-        <h2>LinkedIn Linkage</h2>
-        <p>Project direction is grounded in post-flight transition analysis from Ares.</p>
-        <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">See burnout-transition analysis</a>
+        <p class="eyebrow">Explore by subsystem</p>
+        <div class="subsystem-cards">
+          <a class="subsystem-card" href="sysiphus-tvc.html">
+            <img src="media/Sysiphus/S1%20TVC%20static%20fire.jpg" alt="TVC static fire test" loading="lazy" />
+            <div class="subsystem-card-body">
+              <p class="eyebrow">Thrust Vector Control</p>
+              <h3>TVC</h3>
+              <p>Two-axis gimbal mount, servo actuation, and closed-loop TVC algorithms for in-flight attitude correction.</p>
+            </div>
+          </a>
+          <a class="subsystem-card" href="sysiphus-flight-computer.html">
+            <img src="media/Sysiphus/Sysiphus%20flight%20computer.jpg" alt="Sisyphus flight computer" loading="lazy" />
+            <div class="subsystem-card-body">
+              <p class="eyebrow">Avionics</p>
+              <h3>Flight Computer</h3>
+              <p>Custom PCB integrating IMU, barometer, pyro channels, and real-time state estimation for autonomous flight logic.</p>
+            </div>
+          </a>
+          <a class="subsystem-card" href="sysiphus-code.html">
+            <img class="subsystem-code-snippet" src="media/Code%20Snippet.png" alt="Code snippet" loading="lazy" />
+            <div class="subsystem-card-body">
+              <p class="eyebrow">Software</p>
+              <h3>Code</h3>
+              <p>PID and state-machine flight logic, sensor fusion, trajectory control algorithms, and ground-side simulation tools.</p>
+            </div>
+          </a>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

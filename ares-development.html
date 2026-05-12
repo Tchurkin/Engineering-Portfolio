@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Ares Development | Braxton Herold</title>
+    <meta
+      name="description"
+      content="Detailed Ares development history: milestones, subsystem iterations, and flight test evidence."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="panel reveal dev-subpage-hero">
+        <p class="eyebrow">Ares Development</p>
+        <h1>
+          Flight-by-flight evolution of the Ares TVC stack.
+          <span>Hardware, control loops, and failure analysis in one place.</span>
+        </h1>
+        <p>
+          Inspired by the project-story style from AeroFusion, this page tracks the iterative build
+          history from bench checkout to controlled ascent and post-burnout instability analysis.
+        </p>
+        <div class="dev-subpage-links">
+          <a href="#timeline">Milestone Timeline</a>
+          <a href="#subsystems">Subsystem Changes</a>
+          <a href="#matrix">Flight Matrix</a>
+          <a href="#evidence">Evidence Links</a>
+        </div>
+      </section>
+
+      <section id="timeline" class="panel reveal">
+        <h2>Milestone Timeline</h2>
+        <div class="dev-milestone-grid">
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Phase 01</p>
+            <h3>Static Bench Validation</h3>
+            <p>Validated sensor fusion stability, servo authority, and Teensy loop timing under sustained test runs.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Phase 02</p>
+            <h3>First Controlled Flights</h3>
+            <p>Closed-loop PD control delivered visible attitude stabilization during powered ascent.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Phase 03</p>
+            <h3>Gimbal and Wiring Iteration</h3>
+            <p>Reduced mechanical play and electrical noise to improve command fidelity near peak dynamic pressure.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <p class="dev-milestone-tag">Phase 04</p>
+            <h3>Burnout Transition Analysis</h3>
+            <p>Characterized phase lag and stability loss at thrust cutoff to define next-controller requirements.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="subsystems" class="panel reveal">
+        <h2>Subsystem Changes</h2>
+        <div class="dev-milestone-grid">
+          <article class="dev-milestone-card">
+            <h3>Guidance and Control</h3>
+            <p>PD baseline implemented with gain sweeps and saturation limits for safer flight envelope exploration.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>Sensing and Estimation</h3>
+            <p>BNO055 plus DPS310 data streams synchronized in firmware for cleaner attitude and pressure trends.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>TVC Mechanics</h3>
+            <p>Gimbal geometry and linkage stiffness improved to reduce backlash-driven oscillations.</p>
+          </article>
+          <article class="dev-milestone-card">
+            <h3>Flight Firmware</h3>
+            <p>State machine cleanup for launch detect, powered stabilization, and post-burnout handling logic.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="matrix" class="panel reveal">
+        <h2>Flight Matrix</h2>
+        <div class="dev-table-wrap">
+          <table class="dev-table">
+            <thead>
+              <tr>
+                <th>Build</th>
+                <th>Goal</th>
+                <th>Outcome</th>
+                <th>Main Lesson</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ares B1</td>
+                <td>Power-on sensor and servo check</td>
+                <td>Pass</td>
+                <td>Loop timing stable at target rate</td>
+              </tr>
+              <tr>
+                <td>Ares B2</td>
+                <td>Initial closed-loop ascent</td>
+                <td>Partial pass</td>
+                <td>Stabilization observed, gimbal slop exposed</td>
+              </tr>
+              <tr>
+                <td>Ares B3</td>
+                <td>Refined gimbal and gains</td>
+                <td>Pass</td>
+                <td>Best controlled launch achieved</td>
+              </tr>
+              <tr>
+                <td>Ares B4</td>
+                <td>Burnout transition behavior</td>
+                <td>Data capture success</td>
+                <td>Need higher-order control for post-thrust phase</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="evidence" class="panel reveal">
+        <h2>Evidence and Related Posts</h2>
+        <div class="linkedin-list">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Flight-data analysis: powered stability and burnout divergence</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Iteration log: gimbal redesign and sensor calibration fixes</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447479229190942720/" target="_blank" rel="noreferrer">Roll dynamics and phase lag behavior</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445560710216032257/" target="_blank" rel="noreferrer">Best stabilizing launch clip and recovery failure analysis</a>
+        </div>
+        <p class="proof-note"><a class="project-link" href="ares.html">Back to Ares overview</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Ares — PCB | Braxton Herold</title>
+    <meta name="description" content="Flight computer and PCB development history for the Ares TVC rocket." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares page-ares">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="panel reveal flight-computer-suite">
+        <p class="eyebrow">Ares — Subsystem</p>
+        <h1>PCB &amp; Flight Electronics</h1>
+        <p class="flight-computer-intro">Rectangle 1.0 is the Ares flight computer, built around Teensy 4.1 with BNO055 IMU and DPS310 barometer. It handles sensor fusion, PD control output to TVC servos, and flight-state telemetry for post-flight analysis.</p>
+
+        <div class="flight-computer-media-grid">
+          <figure class="flight-computer-media-card">
+            <img
+              class="project-thumb"
+              src="media/Ares/Rectangle%201.0%20flight%20computer.JPG"
+              alt="Ares Rectangle 1.0 flight computer PCB"
+              loading="lazy"
+            />
+            <figcaption>Rectangle 1.0 assembled flight computer.</figcaption>
+          </figure>
+        </div>
+
+        <div class="flight-computer-specs-block">
+          <h2>PCB Specs</h2>
+          <ul class="flight-computer-specs-list">
+            <li><strong>Microcontroller:</strong> Teensy 4.1</li>
+            <li><strong>IMU:</strong> BNO055 (9-DOF, sensor fusion onboard)</li>
+            <li><strong>Barometer:</strong> DPS310</li>
+            <li><strong>Control outputs:</strong> 2 servo channels (TVC X and Y axes)</li>
+            <li><strong>Software:</strong> PD stabilization loop with angle and angular-rate feedback, flight state machine</li>
+            <li><strong>Telemetry:</strong> Sensor data logged for post-flight analysis of attitude, angular velocity, and altitude</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel reveal pcb-dev-rail-panel">
+        <p class="eyebrow">Hardware Notes</p>
+        <div class="pcb-dev-rail-head">
+          <h2>Development Lessons</h2>
+          <p class="pcb-dev-rail-hint">Scroll left to right</p>
+        </div>
+        <div class="pcb-dev-rail" role="list" aria-label="Ares PCB development lessons">
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Lesson 01</p>
+            <h3>Axis Mapping Errors</h3>
+            <p>Early launches showed the BNO055 x and z gyro axes were flipped relative to angular velocity outputs, which silently corrupted the D-term.</p>
+          </article>
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Lesson 02</p>
+            <h3>Units Mismatch</h3>
+            <p>Angular velocity values from the BNO055 library were radians per second, not degrees, so the controller effectively ignored the D-term until corrected.</p>
+          </article>
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Lesson 03</p>
+            <h3>Hardware Beats Tuning</h3>
+            <p>Gimbal slop reduced command fidelity more than software gains could fix; A3-A5 mechanical stiffness upgrades improved flight behavior the most.</p>
+          </article>
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Lesson 04</p>
+            <h3>Recalibrate After Changes</h3>
+            <p>Any board mounting or harness adjustment requires sensor calibration checks before flight to prevent drift and stage-transition errors.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <a class="btn page-back-btn" href="ares.html">← Back to Ares</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

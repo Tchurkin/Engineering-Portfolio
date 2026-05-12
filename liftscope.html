@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LiftScope | Braxton Makai</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>PID Demo Box | Braxton Herold</title>
     <meta
       name="description"
-      content="LiftScope precision payload targeting and release-assist system case study."
+      content="Interactive PID demo box showing real-time control response, tuning, and stability behavior."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,15 +22,28 @@
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -38,32 +52,37 @@
 
     <main>
       <section class="hero reveal">
-        <p class="eyebrow">LiftScope</p>
+        <p class="eyebrow">PID Demo Box</p>
         <h1>
-          Precision payload targeting.
-          <span>Guidance and release-assist under real constraints.</span>
+          Interactive control-system demo.
+          <span>Real-time PID response and tuning shown through physical hardware.</span>
         </h1>
       </section>
 
       <section class="panel reveal">
-        <img
-          class="project-thumb"
-          src="media/PID%20control%20demo%20box%20for%20Open%20Sauce.png"
-          alt="PID control demo for LiftScope"
-          width="480"
-          height="360"
-          loading="lazy"
-        />
-        <p><strong>Category</strong>: Controls / Embedded Systems / Guidance</p>
-        <p><strong>Status</strong>: Active development</p>
-        <p><strong>Problem</strong>: Environmental variability and release timing uncertainty make manual payload drops inconsistent.</p>
-        <p><strong>My role</strong>: Building the estimate-and-release pipeline, integrating sensor-informed targeting logic, and refining repeatability through field-test feedback.</p>
-        <p><strong>Goal</strong>: Tighten targeting error bounds and make release performance predictable under practical deployment constraints.</p>
+        <video
+          class="project-thumb pid-hover-video"
+          data-hover-play
+          preload="metadata"
+          playsinline
+          width="3840"
+          height="2160"
+        >
+          <source src="media/PID%20demo%20box%20SDR.mp4" type="video/mp4" />
+          <source src="media/PID%20demo%20box.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p><strong>Category</strong>: Controls / Embedded Systems / Education</p>
+        <p><strong>Timeline</strong>: July 2025</p>
+        <p><strong>Status</strong>: Demonstrated at Open Sauce; iterating on hardware and software polish.</p>
+        <p><strong>Problem</strong>: PID behavior can be hard to understand without seeing how gain changes affect a real system.</p>
+        <p><strong>My role</strong>: Designed and built the demo box, implemented embedded control logic, and tuned the loop for stable and readable live demonstrations.</p>
+        <p><strong>Goal</strong>: Make control theory intuitive by showing overshoot, damping, and settling-time changes in real time as gains are adjusted.</p>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,14 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Braxton Makai | Controls & Embedded Systems</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Braxton Herold | Controls & Embedded Systems</title>
     <meta
       name="description"
       content="Student engineer building and controlling real-world systems- rockets, robotics, and embedded hardware."
     />
-    <meta property="og:title" content="Braxton Makai | Controls & Embedded Systems" />
+    <meta property="og:title" content="Braxton Herold | Controls & Embedded Systems" />
     <meta
       property="og:description"
       content="I build and control unstable systems- rockets, robotics, and real-time hardware that actually flies."
@@ -27,20 +28,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-ares">
+  <body class="theme-ares page-home home-variant-g">
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -48,7 +62,9 @@
     </header>
 
     <main id="top">
-      <section class="hero reveal">
+      <section class="home-hero-banner reveal" aria-label="Mountain banner"></section>
+
+      <section class="hero hero-detached reveal">
         <p class="eyebrow">Controls / Robotics / Embedded Systems</p>
         <h1>
           I build and control unstable systems.
@@ -60,17 +76,8 @@
           mechanical systems, embedded electronics, and control algorithms into
           one testable system.
         </p>
-        <div class="hero-visual">
-          <img
-            src="media/Scenic%20mountains.jpg"
-            alt="Braxton Makai portfolio banner"
-            width="800"
-            height="200"
-            loading="eager"
-          />
-        </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="ares.html">View Ares</a>
+          <a class="btn btn-primary" href="sysiphus.html">View Sisyphus</a>
           <a class="btn btn-ghost" href="dev.html">Open Dev Log</a>
         </div>
       </section>
@@ -82,13 +89,34 @@
         </div>
         <div class="project-grid">
           <article class="project-card">
+            <h3>Sisyphus Landing Rocket</h3>
+            <img
+              class="project-thumb project-thumb--white-bg"
+              src="media/Sysiphus/Sisyphus%20CAD.png"
+              alt="Sisyphus rocket CAD render"
+              width="801"
+              height="1005"
+              loading="lazy"
+            />
+            <p>
+              In-progress propulsive landing rocket extending stabilization into
+              full trajectory control and autonomous flight decision logic.
+            </p>
+            <ul>
+              <li>Advanced controls</li>
+              <li>State estimation</li>
+              <li>Autonomy</li>
+            </ul>
+            <a class="project-link" href="sysiphus.html">Open Sisyphus tab</a>
+          </article>
+          <article class="project-card">
             <h3>Ares TVC Rocket</h3>
             <img
-              class="project-thumb"
-              src="media/Ares/Ares%20third%20launch.jpg"
-              alt="Ares TVC rocket third launch"
-              width="480"
-              height="360"
+              class="project-thumb project-thumb--crop project-thumb--white-bg"
+              src="media/Ares/Ares%20final%20CAD%20rendering.jpg"
+              alt="Ares TVC rocket final CAD rendering"
+              width="801"
+              height="1005"
               loading="lazy"
             />
             <p>
@@ -103,53 +131,32 @@
             <a class="project-link" href="ares.html">Open Ares tab</a>
           </article>
           <article class="project-card">
-            <h3>Sisyphus Landing Rocket</h3>
-            <img
-              class="project-thumb"
-              src="media/Sysiphus/Sysiphus%20two-stage%20TVC%20gimbal%20V1.png"
-              alt="Sysiphus two-stage TVC gimbal"
-              width="640"
-              height="360"
-              loading="lazy"
-            />
-            <p>
-              In-progress propulsive landing rocket extending stabilization into
-              full trajectory control and autonomous flight decision logic.
-            </p>
-            <ul>
-              <li>Advanced controls</li>
-              <li>State estimation</li>
-              <li>Autonomy</li>
-            </ul>
-            <a class="project-link" href="sysiphus.html">Open Sysiphus tab</a>
-          </article>
-          <article class="project-card">
-            <h3>LiftScope Targeting System</h3>
+            <h3>PID Demo Box</h3>
             <img
               class="project-thumb"
               src="media/PID%20control%20demo%20box%20for%20Open%20Sauce.png"
-              alt="PID control demo for LiftScope"
+              alt="PID demo box hardware shown at Open Sauce"
               width="480"
               height="360"
               loading="lazy"
             />
             <p>
-              Precision drop-assist and targeting pipeline focused on
-              repeatability under real-world constraints.
+              Interactive controls demo box built to visualize PID behavior,
+              tuning tradeoffs, and closed-loop response in real time.
             </p>
             <ul>
-              <li>Guidance logic</li>
-              <li>Embedded integration</li>
-              <li>Field testing</li>
+              <li>PID control</li>
+              <li>Embedded hardware</li>
+              <li>Live demo design</li>
             </ul>
-            <a class="project-link" href="liftscope.html">Open LiftScope tab</a>
+            <a class="project-link" href="liftscope.html">Open PID Demo Box tab</a>
           </article>
         </div>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Ares — TVC | Braxton Herold</title>
+    <meta name="description" content="Thrust vector control development history for the Ares model rocket." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares page-ares page-ares-tvc">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="tvc-command reveal">
+        <article class="panel tvc-command-copy">
+          <p class="eyebrow">Ares — Subsystem</p>
+          <h1>Thrust Vector Control</h1>
+          <p>Five iterations of two-axis gimbal mounts driven by dual servo actuators, providing real-time attitude correction during powered ascent. Each revision improved stiffness, reduced mechanical play, and increased servo authority to meet tighter stabilization targets.</p>
+          <div class="tvc-chip-row" aria-label="TVC focus areas">
+            <span>Gimbal Geometry</span>
+            <span>Servo Linkage</span>
+            <span>Closed-Loop PD</span>
+            <span>Burnout Analysis</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="tvc-track reveal" aria-label="Ares TVC evolution">
+
+        <article class="tvc-stage tvc-stage-mark1" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block">
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>A1 TVC</h2>
+                <p>First Ares gimbal design. Established the two-axis servo layout and basic linkage geometry. Identified early issues with mechanical slop and servo overload under motor thrust.</p>
+              </div>
+              <figure class="flight-computer-media-card tvc-img-sm">
+                <img
+                  class="project-thumb"
+                  src="media/Ares/A1%20TVC.png"
+                  alt="Ares A1 TVC gimbal iteration"
+                  loading="lazy"
+                />
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <article class="tvc-stage tvc-stage-mark2" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block">
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>A2 TVC</h2>
+                <p>Redesigned linkage arms to reduce slop and improve commanded angle fidelity. Adjusted servo horn geometry to better match the required deflection range for attitude correction.</p>
+              </div>
+              <figure class="flight-computer-media-card tvc-img-sm">
+                <img
+                  class="project-thumb"
+                  src="media/Ares/A2%20TVC.png"
+                  alt="Ares A2 TVC gimbal iteration"
+                  loading="lazy"
+                />
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <article class="tvc-stage tvc-stage-mark1" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block">
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>A3 TVC</h2>
+                <p>Stiffened the gimbal frame and adjusted pivot geometry to reduce flex under motor load. Improved moment arm consistency across the deflection range.</p>
+              </div>
+              <figure class="flight-computer-media-card tvc-img-sm">
+                <img
+                  class="project-thumb"
+                  src="media/Ares/A3%20TVC.png"
+                  alt="Ares A3 TVC gimbal iteration"
+                  loading="lazy"
+                />
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <article class="tvc-stage tvc-stage-mark2" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block">
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>A4 TVC</h2>
+                <p>Refined servo mounting and gimbal geometry to minimize oscillation at the controller's bandwidth limits. Pre-flight PD gain sweeps showed improved stability margins over A3.</p>
+              </div>
+              <figure class="flight-computer-media-card tvc-img-sm">
+                <img
+                  class="project-thumb"
+                  src="media/Ares/A4%20TVC.png"
+                  alt="Ares A4 TVC gimbal iteration"
+                  loading="lazy"
+                />
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <article class="tvc-stage tvc-stage-mark1" data-tvc-stage>
+                <p>Final Ares TVC iteration. Achieved best controlled ascent across flight tests. Static fire confirmed reliable servo authority under full motor thrust. Burnout transition analysis showed phase lag requiring higher-order control for post-thrust flight.</p>
+              </div>
+              <figure class="flight-computer-media-card tvc-img-sm">
+                <img
+                  class="project-thumb"
+                  src="media/Ares/A5%20TVC.png"
+                  alt="Ares A5 TVC gimbal final iteration"
+                  loading="lazy"
+                />
+                <figcaption>A5 TVC gimbal — final geometry.</figcaption>
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <a class="btn page-back-btn" href="ares.html">← Back to Ares</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

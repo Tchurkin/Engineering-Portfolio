@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev | Braxton Makai</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Dev | Braxton Herold</title>
     <meta
       name="description"
-      content="Development log with direct engineering notes from rocket control iterations."
+      content="Development log and engineering notes from rocket iteration"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,20 +17,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-ares">
+  <body class="theme-ares page-dev">
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -37,11 +51,15 @@
     </header>
 
     <main>
-      <section class="hero reveal">
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="hero reveal about-overview-panel">
         <p class="eyebrow">Dev Log</p>
         <h1>
           Raw iteration notes.
-          <span>Field tests, failures, and control-system adjustments.</span>
+          <span>Field tests, failures, and iterations.</span>
         </h1>
       </section>
 
@@ -51,16 +69,22 @@
             <img
               class="dev-entry-media"
               data-src="media/Sysiphus/Flight%20Log.jpg"
-              alt="Sysiphus flight log"
+              alt="Sisyphus flight log"
               width="480"
               height="360"
               loading="eager" decoding="async" fetchpriority="auto"
             />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 01</h3>
-              <p class="dev-entry-date">1w</p>
+              <h3>Log 19</h3>
+              <p class="dev-entry-date">04/19/2026</p>
               <p class="dev-entry-body">
-                Flight data from this weekend's launch shows the effect of thrust vector control (TVC). The rocket remains stable through powered flight. Immediately after burnout, angle error rapidly diverges as thrust, and therefore TVC control authority, drops to zero. The sharp transition suggests the system is operating near its stability boundary and is likely aerodynamically unstable. Next step: shift the center of pressure downward by removing the upper spacer module.
+                Flight data from this weekend's launch shows the effect of thrust vector control (TVC).
+                <br /><br />
+                The rocket remains stable through powered flight. Immediately after burnout, angle error rapidly diverges as thrust, and therefore TVC control authority, drops to zero.
+                <br /><br />
+                The sharp transition suggests the system is operating near its stability boundary and is likely aerodynamically unstable.
+                <br /><br />
+                Next step: shift the center of pressure downward by removing the upper spacer module.
               </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7451797720010317824/" target="_blank" rel="noreferrer">Open post</a>
             </div>
@@ -78,10 +102,16 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 02</h3>
-              <p class="dev-entry-date">2w</p>
+              <h3>Log 18</h3>
+              <p class="dev-entry-date">04/11/2026</p>
               <p class="dev-entry-body">
-                I redesigned the thrust vector control gimbal for strength, fixed sensor calibration issues, implemented a more reliable drogue-deployed parachute system, and retuned my PD controller using a MATLAB simulation. I also crashed another rocket. Because I spent time on preflight testing, that crash was not a loss; it exposed deeper issues in the system. Launch day is not for catching obvious mistakes; it is for uncovering subtle ones.
+                I enjoy model aerospace because I get to integrate mechanics, electronics, and software into a single system.
+                <br /><br />
+                This week I redesigned the thrust vector control gimbal for strength, fixed sensor calibration issues, implemented a more reliable drogue-deployed parachute system, and retuned my PD controller using a MATLAB simulation. I also crashed another rocket.
+                <br /><br />
+                Because I spent time on preflight testing, that crash wasn’t a loss. Instead, it exposed deeper issues in the system. Launch day isn’t for catching obvious mistakes; it’s for uncovering the subtle ones.
+                <br /><br />
+                Before every launch, I run last-minute checks on every critical subsystem. That’s why my recent flights, even the failed ones, reliably give me useful data.
               </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7448907517193138176/" target="_blank" rel="noreferrer">Open post</a>
             </div>
@@ -102,10 +132,20 @@
               </video>
             </div>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 03</h3>
-              <p class="dev-entry-date">3w</p>
+              <h3>Log 17</h3>
+              <p class="dev-entry-date">04/07/2026</p>
               <p class="dev-entry-body">
-                The recovered data showed rapid roll-up around the longitudinal axis. TVC kept up at low spin rates, but as spin accelerated it lagged out of phase and began amplifying error. A rocket with landing legs has significantly higher rotational inertia, so this issue should be reduced in future launches. Current priority is improving parachute reliability with drogue-assisted deployment.
+                I didn’t think my rocket would spin when it thrust vectored on its way up.
+                <br /><br />
+                While hard to see in video, the recovered data shows that this rocket quickly spun up around its longitudinal axis (rolling).
+                <br /><br />
+                The TVC was able to keep up at the low rotation speeds right after ignition. However, as the spin accelerated, the TVC lagged out of phase and went from correcting to amplifying errors.
+                <br /><br />
+                I think this was only a problem since I didn’t fly this rocket with landing legs. Compared to this launch, a rocket with landing legs multiplies rotational inertia by roughly 3X. Landing legs deployed for descent multiply it by around 20X. Given this, future launches with landing legs shouldn’t have this issue.
+                <br /><br />
+                The biggest problem right now is that the parachute doesn’t open reliably. I will fix this by using a small drogue chute for more reliable main chute opening.
+                <br /><br />
+                Still, the thrust vectoring looks to work well, and I expect next launch to have very good PD tuning.
               </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7447479229190942720/" target="_blank" rel="noreferrer">Open post</a>
             </div>
@@ -125,10 +165,14 @@
               </video>
             </div>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 04</h3>
-              <p class="dev-entry-date">1mo</p>
+              <h3>Log 16</h3>
+              <p class="dev-entry-date">04/02/2026</p>
               <p class="dev-entry-body">
-                This was my best thrust vector control stabilizing launch yet. The PD controller clearly kept the rocket flying straight up during ascent. After descent and landing-leg deployment, parachute ejection timing lagged and the chute hardpoint failed, resulting in impact destruction. The flight still produced useful control and recovery-system data.
+                This is my best thrust vector control stabilizing launch yet.
+                <br /><br />
+                While not perfectly tuned yet, the PD control is clearly doing its job to keep the rocket flying straight up. After a reasonably smooth ascent, the rocket drifts back down and the landing legs deploy. The parachute is also meant to deploy at apogee, but the mechanical ejection took longer than expected. Once deployed, even with a shock cord, the parachute snapped off the hardpoint at the top of the rocket (turns out zip-ties aren’t an unbreakable supermaterial like I thought).
+                <br /><br />
+                The rocket was instantly obliterated on impact as usual.
               </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7445560710216032257/" target="_blank" rel="noreferrer">Open post</a>
             </div>
@@ -146,9 +190,16 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 05</h3>
-              <p class="dev-entry-date">1mo</p>
-              <p class="dev-entry-body">Finally a semi-successful thrust-vector control (TVC) launch of my Sysiphus rocket! After lots of failures and long drives to the desert, my 3D-printed rocket can now almost self-stabilize in flight. Another small step in my goal to land it like SpaceX.</p>
+              <h3>Log 15</h3>
+              <p class="dev-entry-date">04/02/2026</p>
+              <p class="dev-entry-body">
+                This rocket launch failed for a particularly interesting reason.
+                <br /><br />
+                I decided to try launching my thrust vectoring rocket with landing legs deployed because having extended mass increases rotational inertia, thus making the rocket less susceptible to mistakes in my PD control — sort of like tenporary training wheels.
+                This added stability, but it also introduced an issue I didn’t see coming: the vectoring motor could no longer effectively induce stabilizing torques on the rocket.
+                <br /><br />
+                After much thought, I realized that the landing legs may have moved the rocket’s center of gravity too close to the motor’s axis of rotation — so the moment arm on which the motor would normally apply a corrective torque was now much shorter than it should be. The motor was still vectoring to correct, but instead of rotating the rocket, it only translated the rocket sideways.
+              </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7445555442958737408/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
@@ -165,9 +216,11 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 06</h3>
-              <p class="dev-entry-date">7mo</p>
-              <p class="dev-entry-body">Finally a semi-successful thrust-vector control (TVC) launch of my Sysiphus rocket! After lots of failures and long drives to the desert, my 3D-printed rocket can now almost self-stabilize in flight. Another small step in my goal to land it like SpaceX.</p>
+              <h3>Log 14</h3>
+              <p class="dev-entry-date">10/01/2025</p>
+              <p class="dev-entry-body">
+                Finally a semi-successful thrust-vector control (TVC) launch of my Sisyphus rocket! After lots of failures and long drives to the desert, my 3D-printed rocket can now almost self-stabilize in flight. Another small step in my goal to land it like SpaceX.
+              </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7379318937097809920/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
@@ -184,9 +237,27 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 07</h3>
-              <p class="dev-entry-date">8mo</p>
-              <p class="dev-entry-body">Activate to view larger image,</p>
+              <h3>Log 13</h3>
+              <p class="dev-entry-date">08/08/2025</p>
+              <p class="dev-entry-body">
+                Here’s how Kerbal Space Program inspired how I designed my self-landing rocket.
+                <br /><br />
+                I’ve always loved how easy it is to drag and drop fuel tanks and rocket engines to build rockets in KSP — but I didn’t think prototyping rockets in real life could be that easy. That is, until I started my latest project.
+                <br /><br />
+                People have landed model rockets before, but a lot of them used similar designs. Usually individual 3D-printed parts that are screwed into a carboard body tube. This works, but it’s a pain to use. Particularly in assembly and disassembly; also when it crashes, you can’t just swap out the broken parts and fly again — you have to assemble a whole new rocket.
+                <br /><br />
+                I thought I could do better. In the interest of fast prototyping, I designed Sisyphus around these guiding principles:
+                <br /><br />
+                1. Easy to assemble
+                <br /><br />
+                2. Easy to replace broken parts
+                <br /><br />
+                3. Easy to add, remove, or replace components
+                <br /><br />
+                These goals led me to use small 3D-printed modules that screw together with aerodynamic shells around each module. While not applicable to full-scale rockets, this modular design works amazingly well for fast-paced hobby rocketry prototyping.
+                <br /><br />
+                Now, every time I have to fix something in any of my modules, I remember that I will be forever indebted to my old self for the fact that I don’t need to disassemble the entire rocket to access it.
+              </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7359774189819420672/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
@@ -194,9 +265,21 @@
           <article class="dev-entry">
             <img class="dev-entry-media" data-src="media/Sysiphus/Code%20bug.jpg" alt="Dev log entry photo" width="640" height="360" loading="eager" decoding="async" fetchpriority="auto" />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 08</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">How do PID Controllers Work?</p>
+              <h3>Log 12</h3>
+              <p class="dev-entry-date">08/01/2025</p>
+              <p class="dev-entry-body">
+                Today I learned an important lesson in coding with libraries. That is, to never assume other peoples’ code is predictable.
+                <br /><br />
+                After a failed TVC rocket launch, I took a closer look at my sensor outputs and noticed something was wrong. More specifically, my IMU seemed to have many errant outputs.
+                <br /><br />
+                It’s important to know that I had checked my gyro axes previously and found the x and z axes on the chip were flipped compared to how I was used to seeing them oriented. Easy fix — I just flipped x and z throughout all the IMU outputs.
+                <br /><br />
+                This was a mistake. I hadn’t noticed that, while flipped for the gyro, the x and z axes were correctly oriented for the angular velocity and linear acceleration outputs.
+                <br /><br />
+                On top of this, I also realized my angular velocity outputs were in radians instead of degrees like for the gyro. This was an easy fix, but it meant that, during my last launch, my rocket’s PD controller was effectively ignoring the D term — not good for a stable flight.
+                <br /><br />
+                These small errors are likely what doomed my last launch from the start. I understand now that even making small assumptions about other peoples’ code can spell disaster. Next time I will definitely remember to check my sensor outputs twice.
+              </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7357208191706746880/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
@@ -213,9 +296,13 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 09</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">How do PID Controllers Work?</p>
+              <h3>Log 11</h3>
+              <p class="dev-entry-date">08/01/2025</p>
+              <p class="dev-entry-body">
+                Since my last parachute ejection system seemed to jam and fail to deploy during flight, I redisigned with reliability in mind.
+                <br /><br />
+                Using interlocking fairings under pressure from a spring should be simpler and less likely to jam inside the rocket. Since I plan to hone in my stability on ascent, I’m just going to do a simple TVC stabilized launch — however, this means I’ll be relying on deploying the parachute on descent, so if I want to reuse my rockets, it will need to work 100% of the time.
+              </p>
               <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7357199443336564736/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
@@ -223,20 +310,28 @@
           <article class="dev-entry">
             <img class="dev-entry-media" data-src="media/Sysiphus/Smaller%20Pyro%20circuit.JPG" alt="Dev log entry photo" width="640" height="360" loading="eager" decoding="async" fetchpriority="auto" />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 10</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">How do PID Controllers Work?</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7355980003378925568/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 10</h3>
+              <p class="dev-entry-date">07/25/2025</p>
+              <p class="dev-entry-body">
+                I reduced the size of my motor ignition circuit to about 1/10th of the previous size.
+                <br /><br />
+                It turns out the MOSFETs I have been using are much larger than they need to be. It seems like the key for quick ignition is really a trace width that accounts for the current spike on ignition.
+                <br /><br />
+                🧯 I also added a pull-down resistor on the MOSFET enable pin for safety.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7354601875322667009/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
           <article class="dev-entry">
             <img class="dev-entry-media" data-src="media/Sysiphus/Exhibitting%20at%20Open%20Sauce.JPG" alt="Dev log entry photo" width="640" height="360" loading="eager" decoding="async" fetchpriority="auto" />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 11</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">I want to Land a Model Rocket Like SpaceX</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7354601875322667009/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 09</h3>
+              <p class="dev-entry-date">07/20/2025</p>
+              <p class="dev-entry-body">
+                I just finished up exhibiting at Open Sauce, and it was a great experience! While I mainly showcased my self-landing model rocket with thrust-vector control, a lot of people also loved my interactive PID controller demo. I’m so grateful my booth was right next to a few college rocket teams, and I got to meet so many cool people!
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7352921805369556992/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -252,10 +347,16 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 12</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">I want to Land a Model Rocket Like SpaceX</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7354231941262442501/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 08</h3>
+              <p class="dev-entry-date">07/15/2025</p>
+              <p class="dev-entry-body">
+                I just launched the Sisyphus rocket for the first two times, both with very similar results. This video is from the second one. Over the past year, I’ve been designing a fully 3D-printed model rocket with the goal being to eventually land it like a SpaceX booster. My first step toward this is to achieve stable flight with Thrust Vector Control (TVC).
+                <br /><br />
+                I have already built a rocket capable of TVC stabilization, but the challenge I’m now faced with is doing this on a rocket designed for landing propulsively. In the launch video, it is clear that the rocket quickly veers off course, and then it tries to correct with TVC to no avail. I think the main issue on this launch was having the CG too low, which makes the rocket behave like a plane flying backwards. This aerodynamic instability has been hard for me to overcome because changing the balance of the rocket is very difficult when trying to also optimize for weight.
+                <br /><br />
+                Despite these setbacks, almost all systems onboard seem to be functioning correctly, and I hope to get stable flight after some rebalancing. Overall, these launches remind me that failure is part of the process. I tried as hard as I reasonably could to remove any chance of error in these rockets, but in such a precise hobby, even small mistakes can be catastrophic. Over time, I am confident I will slowly refine my design until I can land this rocket, and I’m excited for that.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7350793639209410561/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -271,10 +372,12 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 13</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">Activate to view larger image,</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7352921805369556992/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 07</h3>
+              <p class="dev-entry-date">03/10/2025</p>
+              <p class="dev-entry-body">
+                This two-stage thrust vector controller is a perfect example of the benefits of design simplification. Initially, I approached this problem by devising a complex mechanism that would have, technically, been optimal. However, the design was overambitious for a 3D-printed part, and ended up being extremely unreliable. In this static fire, I tested a significantly less complex method to fire one motor after another, which worked well and which I predict will be very reliable.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7305098349173485569/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -290,10 +393,12 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 14</h3>
-              <p class="dev-entry-date">9mo</p>
-              <p class="dev-entry-body">This two-stage thrust vector controller is a perfect example of the benefits of design simplification. Initially, I approached this problem by devising a complex mechanism that would have, technically, been optimal. However, the design was overambitious for a 3D-printed part, and ended up being extremely unreliable. In this static fire, I tested a significantly less complex method to fire one motor after another, which worked well and which I predict will be very reliable.</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7350793639209410561/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 06</h3>
+              <p class="dev-entry-date">02/16/2025</p>
+              <p class="dev-entry-body">
+                I just static-tested both stages of the Sisyphus landing rocket, simulating the ignition and rocket motor control sequences that will occur during flight. While the first stage worked well, the descent motor jammed before it locked into the Thrust Vector Control (TVC) mount. It makes sense that the motor loading mechanism failed, as it is the most complex mechanical function on the rocket. Overall, although the TVC got melted, little else was damaged and we got this awesome footage!
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7297017689959526401/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -309,20 +414,26 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 15</h3>
-              <p class="dev-entry-date">1yr</p>
-              <p class="dev-entry-body">This two-stage thrust vector controller is a perfect example of the benefits of design simplification. Initially, I approached this problem by devising a complex mechanism that would have, technically, been optimal. However, the design was overambitious for a 3D-printed part, and ended up being extremely unreliable. In this static fire, I tested a significantly less complex method to fire one motor after another, which worked well and which I predict will be very reliable.</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7305098349173485569/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 05</h3>
+              <p class="dev-entry-date">12/01/2024</p>
+              <p class="dev-entry-body">
+                Developing landing legs for the Sisyphus Mark 1 landing rocket has been a challenge, primarily with regard to weight management. I have been prototyping parts without much concern for weight, but the landing legs, in particular, are becoming significantly heavier than I had anticipated. This is becoming concerning because, using an F15 rocket motor, a total weight of more than 1.4 kilograms could result in the launch becoming an unintended ‘static fire’ (if the rocket doesn’t make it off the ground).
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7269099743396429824/" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
           <article class="dev-entry">
             <img class="dev-entry-media" data-src="media/Sysiphus/Sysiphus%20flight%20computer.jpg" alt="Dev log entry photo" width="640" height="360" loading="eager" decoding="async" fetchpriority="auto" />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 16</h3>
-              <p class="dev-entry-date">1yr</p>
-              <p class="dev-entry-body">I just static-tested both stages of the Sysiphus landing rocket, simulating the ignition and rocket motor control sequences that will occur during flight. While the first stage worked well, the descent motor jammed before it locked into the Thrust Vector Control (TVC) mount. It makes sense that the motor loading mechanism failed, as it is the most complex mechanical function on the rocket. Overall, although the TVC got melted, little else was damaged and we got this awesome footage!</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7297017689959526401/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 04</h3>
+              <p class="dev-entry-date">11/20/2024</p>
+              <p class="dev-entry-body">
+                PCB (printed circuit board) development has been going smoothly. However, troubleshooting the mosfets that light the rocket engines has been challenging.
+                <br /><br />
+                I designed the PCB around the Teensy 4.1 microcontroller, whose power will improve response time, memory, and the number of control outputs. With these improvements I was able to add four servo PWM outputs and four mosfet channnels. To know the position and orientation of the rocket, I’m using a six-axis gyro/accelerometer (MPU-6050) and a barometer (BMP-280).
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/posts/braxton-herold_pcb-printed-circuit-board-development-has-activity-7265089705854087168-eRWE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE7iPoABtYuglRsVJd5-bctVK6iEcTa15ic" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -338,10 +449,14 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 17</h3>
-              <p class="dev-entry-date">1yr</p>
-              <p class="dev-entry-body">Developing landing legs for the Sisyphus Mark 1 landing rocket has been a challenge, primarily with regard to weight management. I have been prototyping parts without much concern for weight, but the landing legs, in particular, are becoming significantly heavier than I had anticipated. This is becoming concerning because, using an F15 rocket motor, a total weight of more than 1.4 kilograms could result in the launch becoming an unintended 'static fire' (if the rocket doesn't make it off the ground).</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7269099743396429824/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 03</h3>
+              <p class="dev-entry-date">11/18/2024</p>
+              <p class="dev-entry-body">
+                The most technical mechanical system in the Sisyphus rocket, so far, is the TVC reloader. This is required in order to burn one motor during ascent, eject it, and burn a second motor during descent. I decided to keep the moving TVC parts independent from the second motor storage unit to minimize the rotational inertia of the mass being vectored — which improves the responsiveness of the TVC.
+                <br /><br />
+                Notice the black servo at the back of the assembly: it releases a spring, which pushes the second motor into the TVC, while at the same time, ejecting the first motor. Also, the descent motor is locked into the TVC casing with a bolt action mechanism visible right next to the right-most servo.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/posts/braxton-herold_the-most-technical-mechanical-system-in-the-activity-7264475710029803521-dp-E?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE7iPoABtYuglRsVJd5-bctVK6iEcTa15ic" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
@@ -357,28 +472,38 @@
               Your browser does not support the video tag.
             </video>
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 18</h3>
-              <p class="dev-entry-date">1yr</p>
-              <p class="dev-entry-body">Activate to view larger image,</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7265089705854087168/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 02</h3>
+              <p class="dev-entry-date">11/12/2024</p>
+              <p class="dev-entry-body">
+                Static testing the thrust vector controller was successful. The motor rotation speed and control, driven by two servos, was unaffected by the F-15 motor thrust — which means less error and more accurate control during flight.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/posts/braxton-herold_static-testing-the-thrust-vector-controller-activity-7263985428196741120-844s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE7iPoABtYuglRsVJd5-bctVK6iEcTa15ic" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
 
           <article class="dev-entry">
             <img class="dev-entry-media" data-src="media/Sysiphus/Full%20initial%20CAD.JPG" alt="Dev log entry photo" width="640" height="360" loading="eager" decoding="async" fetchpriority="auto" />
             <div class="dev-entry-content">
-              <h3>LinkedIn Post 19</h3>
-              <p class="dev-entry-date">1yr</p>
-              <p class="dev-entry-body">Static testing the thrust vector controller was successful. The motor rotation speed and control, driven by two servos, was unaffected by the F-15 motor thrust - which means less error and more accurate control during flight.</p>
-              <a class="project-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7264475710029803521/" target="_blank" rel="noreferrer">Open post</a>
+              <h3>Log 01</h3>
+              <p class="dev-entry-date">9/14/2024</p>
+              <p class="dev-entry-body">
+                Since exhibiting the first successful thrust vector-controlled model rocket Miles Krawitz and I made at the Open Sauce maker convention, which was able to control its ascent, I’ve been working to design a more capable version with the ability to land propulsively, like SpaceX. Because this rocket will only go up and down, achieving nothing other than looking awesome (although this would be quite an accomplishment), I decided to call it Sisyphus.
+              </p>
+              <a class="project-link" href="https://www.linkedin.com/posts/braxton-herold_since-exhibiting-the-first-successful-thrust-activity-7263703864111984640-n6Em?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE7iPoABtYuglRsVJd5-bctVK6iEcTa15ic" target="_blank" rel="noreferrer">Open post</a>
             </div>
           </article>
         </div>
+
+        <nav class="dev-pagination" data-dev-pagination aria-label="Dev log pages">
+          <button class="dev-page-btn" type="button" data-dev-page="prev" aria-label="Previous page">&lt;</button>
+          <div class="dev-page-list" data-dev-page-list></div>
+          <button class="dev-page-btn" type="button" data-dev-page="next" aria-label="Next page">&gt;</button>
+        </nav>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

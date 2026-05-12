@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Sisyphus — TVC | Braxton Herold</title>
+    <meta name="description" content="Thrust vector control system for the Sisyphus propulsive landing rocket." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares page-sysiphus-tvc">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tvc-command reveal">
+        <article class="panel tvc-command-copy">
+          <p class="eyebrow">Sisyphus — Subsystem</p>
+          <h1>Thrust Vector Control</h1>
+          <p>Two-axis gimbal mount driven by dual servo actuators provides real-time attitude correction during powered ascent. The mount is built for fast iteration and tightening control authority as flight loads change.</p>
+          <div class="tvc-chip-row" aria-label="TVC focus areas">
+            <span>Servo Linkage</span>
+            <span>Closed-Loop Control</span>
+            <span>Stiffness Tuning</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="tvc-track reveal" aria-label="TVC evolution">
+        <article class="tvc-stage tvc-stage-mark1" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block tvc-static-block" data-tvc-static-preview>
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>S1 TVC</h2>
+                <p>
+                  First iteration integrated an overly complex rocket motor reloading mechanism, which used a bolt-action locking mechanism and a spring system that pushed the ascent motor forward into the TVC mount. While the system successfully demonstrated thrust vectoring, the design's complexity made it too unreliable for flight.
+                </p>
+              </div>
+              <h3>Static Fire</h3>
+              <video
+                class="tvc-static-video"
+                data-tvc-static-video
+                src="media/Sysiphus/S1%20reloading%20static%20fire.MP4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Mark 1 static fire"
+              ></video>
+            </section>
+
+            <section
+              class="tvc-media-block tvc-cad-block"
+              data-cad-scrub
+              data-cad-frame-pattern="media/Sysiphus/frames/s1-tvc/frame-{index}.webp"
+              data-cad-frame-count="241"
+              data-cad-frame-digits="4"
+            >
+              <h3>Interactive CAD</h3>
+              <div class="tvc-cad-frame">
+                <canvas
+                  class="tvc-cad-canvas"
+                  data-cad-canvas
+                  aria-label="Mark 1 interactive CAD canvas viewer"
+                ></canvas>
+                <video
+                  class="tvc-cad-video"
+                  data-cad-video
+                  src="media/Sysiphus/S1%20TVC%20Pan.mp4"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label="Mark 1 interactive CAD viewer"
+                ></video>
+                <div class="tvc-cad-hint">Move mouse horizontally to orbit</div>
+              </div>
+              <div class="tvc-scrub-track" aria-hidden="true"><span data-cad-progress></span></div>
+            </section>
+          </div>
+        </article>
+
+        <article class="tvc-stage tvc-stage-mark2" data-tvc-stage>
+          <div class="tvc-stage-media">
+            <section class="tvc-media-block tvc-static-block" data-tvc-static-preview>
+              <div class="tvc-stage-header">
+                <p class="eyebrow">Iteration</p>
+                <h2>S2 TVC</h2>
+                <p>
+                  The Mark 2 iteration simplified the motor reloading mechanism, removing the bolt-action lock and spring system in favor of a more straightforward friction-fit motor staging. This change improved reliability and greatly reduced the chances of mechanical failure during flight. Despite the greater vectoring load, it still demonstrated effective thrust vectoring performance.
+                </p>
+              </div>
+              <h3>Static Fire</h3>
+              <video
+                class="tvc-static-video"
+                data-tvc-static-video
+                src="media/Sysiphus/S2%20static%20fire.MP4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Mark 2 static fire"
+              ></video>
+            </section>
+
+            <section
+              class="tvc-media-block tvc-cad-block"
+              data-cad-scrub
+              data-cad-frame-pattern="media/Sysiphus/frames/s2-tvc/frame-{index}.webp"
+              data-cad-frame-count="241"
+              data-cad-frame-digits="4"
+            >
+              <h3>Interactive CAD</h3>
+              <div class="tvc-cad-frame">
+                <canvas
+                  class="tvc-cad-canvas"
+                  data-cad-canvas
+                  aria-label="Mark 2 interactive CAD canvas viewer"
+                ></canvas>
+                <video
+                  class="tvc-cad-video"
+                  data-cad-video
+                  src="media/Sysiphus/S2%20TVC%20Pan.mp4"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label="Mark 2 interactive CAD viewer"
+                ></video>
+                <div class="tvc-cad-hint">Move mouse horizontally to orbit</div>
+              </div>
+              <div class="tvc-scrub-track" aria-hidden="true"><span data-cad-progress></span></div>
+            </section>
+          </div>
+        </article>
+
+        <a class="btn page-back-btn" href="sysiphus.html">← Back to Sisyphus</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

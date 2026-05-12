@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Braxton Makai</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>About | Braxton Herold</title>
     <meta
       name="description"
-      content="About Braxton Makai, student aerospace engineer focused on controls and embedded systems."
+      content="About Braxton Herold, student aerospace engineer focused on controls and embedded systems."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,20 +17,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-ares">
+  <body class="theme-ares page-about">
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html">Braxton Makai</a>
+      <a class="brand" href="index.html">Braxton Herold</a>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="dev.html">Dev</a></li>
-          <li><a href="sysiphus.html">Sysiphus</a></li>
-          <li><a href="ares.html">Ares</a></li>
-          <li><a href="liftscope.html">LiftScope</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
@@ -37,16 +51,34 @@
     </header>
 
     <main>
-      <section class="hero reveal">
-        <p class="eyebrow">About</p>
-        <h1>
-          Student aerospace engineer.
-          <span>Controls, embedded systems, and hardware that gets tested for real.</span>
-        </h1>
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="hero reveal about-overview-panel">
+        <div class="about-overview-layout">
+          <figure class="about-profile-frame" aria-label="Profile photo">
+            <img
+              src="media/Profile%20Pic.JPG"
+              alt="Braxton Herold"
+              width="420"
+              height="420"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <div class="about-overview-copy">
+            <p class="eyebrow">About</p>
+            <h1>
+              Student aerospace engineer.
+              <span>Controls, embedded systems, and hardware that gets tested for real.</span>
+            </h1>
+          </div>
+        </div>
       </section>
 
       <section class="panel reveal">
-        <h2>Who I Am</h2>
+        <h2>About Me</h2>
         <p>
           I build and test closed-loop control systems on real model aerospace hardware. My work centers on thrust vector control rockets, where I integrate mechanical systems, embedded electronics, and control algorithms into one flight system.
         </p>
@@ -58,20 +90,27 @@
       <section class="panel reveal">
         <h2>Core Stack</h2>
         <div class="skill-tags">
-          <span>Control systems</span>
-          <span>PID/LQR</span>
-          <span>Embedded C/C++</span>
-          <span>MATLAB/Simulink</span>
-          <span>Sensor fusion</span>
-          <span>BNO055 + DPS310 integration</span>
-          <span>PCB and hardware integration</span>
-          <span>Simulation-to-flight iteration</span>
+          <span>Control Theory</span>
+          <span>Kalman filtering</span>
+          <span>Simulink</span>
+          <span>Data Analysis</span>
+          <span>Python</span>
+          <span>Java</span>
+          <span>Arduino</span>
+          <span>Onshape</span>
+          <span>Certified Onshape Associate</span>
+          <span>CAD/CAM</span>
+          <span>Autodesk Fusion 360</span>
+          <span>Autodesk CFD</span>
+          <span>Eagle PCB</span>
+          <span>EasyEDA</span>
+          <span>Aerospace</span>
         </div>
       </section>
     </main>
 
     <footer>
-      <p><span id="year"></span> Braxton Makai.</p>
+      <p><span id="year"></span> Braxton Herold.</p>
     </footer>
 
     <script src="script.js"></script>

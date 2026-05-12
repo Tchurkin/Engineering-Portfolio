@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Sisyphus — Flight Computer | Braxton Herold</title>
+    <meta name="description" content="Custom flight computer for the Sisyphus propulsive landing rocket." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-ares page-sysiphus-flight-computer">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Braxton Herold</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="dev.html">Dev</a></li>
+          <li class="nav-has-dropdown">
+            <a href="sysiphus.html">Sisyphus</a>
+            <ul class="nav-dropdown">
+              <li><a href="sysiphus-tvc.html">TVC</a></li>
+              <li><a href="sysiphus-flight-computer.html">Flight Computer</a></li>
+              <li><a href="sysiphus-code.html">Code</a></li>
+            </ul>
+          </li>
+          <li class="nav-has-dropdown">
+            <a href="ares.html">Ares</a>
+            <ul class="nav-dropdown">
+              <li><a href="ares-tvc.html">TVC</a></li>
+              <li><a href="ares-pcb.html">PCB</a></li>
+            </ul>
+          </li>
+          <li><a href="liftscope.html">PID Demo Box</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-scrub-banner" aria-hidden="true">
+        <div class="about-scrub-track"></div>
+      </section>
+
+      <section class="panel reveal flight-computer-suite">
+        <p class="eyebrow">Sisyphus — Subsystem</p>
+        <h1>Flight Computer</h1>
+        <p class="flight-computer-intro">Impulse 2.0 is the custom Sisyphus avionics board for flight sensing, actuator control, pyro events, and telemetry. This layout groups hardware photos, CAD, and specifications into one place for faster understanding.</p>
+
+        <div class="flight-computer-media-grid">
+          <figure class="flight-computer-media-card">
+            <img
+              class="project-thumb"
+              src="media/Sysiphus/Sysiphus%20flight%20computer.jpg"
+              alt="Sisyphus flight computer PCB"
+              width="640"
+              height="480"
+              loading="lazy"
+            />
+            <figcaption>Assembled Sisyphus flight computer board.</figcaption>
+          </figure>
+
+          <figure class="flight-computer-media-card">
+            <img
+              class="project-thumb"
+              src="media/Sysiphus/Impulse%202.3%20PCB%20CAD.png"
+              alt="Impulse 2.3 PCB CAD render"
+              width="640"
+              height="480"
+              loading="lazy"
+            />
+            <figcaption>Impulse 2.3 CAD layout with component and routing placement.</figcaption>
+          </figure>
+        </div>
+
+        <div class="flight-computer-specs-block">
+          <h2>PCB Specs</h2>
+          <ul class="flight-computer-specs-list">
+            <li><strong>Microcontroller:</strong> Teensy 4.1</li>
+            <li><strong>Barometer:</strong> DPS310</li>
+            <li><strong>IMU:</strong> BNO-055</li>
+            <li><strong>Pyro outputs:</strong> 4 channels at 7.4V, each with a continuity-check LED circuit</li>
+            <li><strong>Control outputs:</strong> 2 servo outputs</li>
+            <li><strong>Status and alerts:</strong> onboard buzzer and RGB LED</li>
+            <li><strong>Power system:</strong> two 7.4V LiPo batteries, one dedicated to pyros and one for all other electronics to isolate the circuits and avoid pyro-induced brownouts</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="panel reveal pcb-dev-rail-panel">
+        <p class="eyebrow">PCB History</p>
+        <div class="pcb-dev-rail-head">
+          <h2>Development &amp; Iterations</h2>
+          <p class="pcb-dev-rail-hint">Scroll left to right</p>
+        </div>
+        <p>The flight computer went through several major hardware revisions. Each iteration solved problems revealed by the last, from basic pyro failures to full SMD layout and trace-width discovery.</p>
+        <div class="pcb-dev-rail" role="list" aria-label="Sisyphus PCB iteration timeline">
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 1.0</p>
+            <h3>Baseline Architecture</h3>
+            <img src="media/Sysiphus/Impulse%201.0.png" alt="Impulse 1.0 PCB layout" loading="lazy" />
+            <p>Teensy 4.1 with MPU6050/BMP280 and initial pyro circuitry; pyro path was non-functional.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 1.1-1.3</p>
+            <h3>Output Expansion</h3>
+            <img src="media/Sysiphus/Impulse%201.1.png" alt="Impulse 1.1 PCB layout" loading="lazy" />
+            <p>Expanded servo outputs and switched to larger MOSFETs, but pyro reliability remained unresolved.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 1.4</p>
+            <h3>Power Isolation</h3>
+            <img src="media/Sysiphus/Impulse%201.4.png" alt="Impulse 1.4 PCB layout" loading="lazy" />
+            <p>Added dedicated LiPo circuit for pyros to isolate high-current firing from core avionics.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 2.0</p>
+            <h3>SMD Jump</h3>
+            <img src="media/Sysiphus/Impulse%202.0.png" alt="Impulse 2.0 PCB layout" loading="lazy" />
+            <p>Attempted ESP32-S2 full-SMD board and adopted BNO055 plus DPS310 sensor stack for future revisions.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 2.1</p>
+            <h3>Teensy Return</h3>
+            <img src="media/Sysiphus/Impulse%202.1.png" alt="Impulse 2.1 PCB layout" loading="lazy" />
+            <p>Mostly-SMD layout with Teensy 4.1, continuity checks, and dedicated sensor power; pyro troubleshooting intensified.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Test Boards</p>
+            <h3>Root-Cause Hunt</h3>
+            <img src="media/Sysiphus/Small%20pyro%20test%20circuit%20PCB.png" alt="Pyro isolation test board" loading="lazy" />
+            <p>Isolated pyro and regulator boards exposed trace-width as the pyro ignition bottleneck.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 2.2</p>
+            <h3>Pyro Success</h3>
+            <img src="media/Sysiphus/Impulse%202.2.png" alt="Impulse 2.2 PCB layout" loading="lazy" />
+            <p>Widened pyro traces enabled reliable firing and powered the first successful Sisyphus launch.</p>
+          </article>
+
+          <article class="pcb-dev-card" role="listitem">
+            <p class="eyebrow">Impulse 2.3</p>
+            <h3>Density Upgrade</h3>
+            <img src="media/Sysiphus/Impulse%202.3%20PCB%20CAD.png" alt="Impulse 2.3 PCB CAD" loading="lazy" />
+            <p>Swapped to smaller SMD MOSFETs while preserving wide pyro routing for robust ignition.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <a class="btn page-back-btn" href="sysiphus.html">← Back to Sisyphus</a>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="year"></span> Braxton Herold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
