@@ -1,14 +1,14 @@
 :root {
-  --bg: #070b12;
-  --surface: #0d1522;
-  --surface-strong: #111f31;
+  --bg: #1b2638;
+  --surface: #243349;
+  --surface-strong: #2c3e58;
   --ink: #f5f8ff;
-  --muted: #a5b6cf;
-  --line: #21324a;
-  --accent: #2f8bff;
-  --accent-alt: #ff7a2f;
+  --muted: #b8c7df;
+  --line: #3a4d6b;
+  --accent: #4a9eff;
+  --accent-alt: #ff8a47;
   --max-width: 1040px;
-  --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -26,9 +26,9 @@ body {
   font-family: "Sora", sans-serif;
   line-height: 1.6;
   background:
-    radial-gradient(circle at 88% 10%, rgba(47, 139, 255, 0.23), transparent 28%),
-    radial-gradient(circle at 10% 90%, rgba(255, 122, 47, 0.2), transparent 26%),
-    linear-gradient(140deg, #060a11 0%, #070d15 55%, #0a121c 100%);
+    radial-gradient(circle at 88% 10%, rgba(74, 158, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 10% 90%, rgba(255, 138, 71, 0.18), transparent 28%),
+    linear-gradient(140deg, #1a2538 0%, #1f2c41 55%, #25344c 100%);
   overflow-x: hidden;
 }
 
@@ -1198,7 +1198,7 @@ h1 span {
   background:
     radial-gradient(circle at 86% 8%, rgba(69, 166, 255, 0.28), transparent 27%),
     radial-gradient(circle at 16% 85%, rgba(255, 146, 84, 0.2), transparent 24%),
-    linear-gradient(136deg, #050911 0%, #071222 44%, #0a1830 100%);
+    linear-gradient(136deg, #1a2538 0%, #1f2c41 44%, #25344c 100%);
 }
 
 .page-sysiphus-tvc main {
@@ -2392,7 +2392,7 @@ button:focus-visible {
   font-family: "IBM Plex Mono", monospace;
   background:
     radial-gradient(circle at 15% 12%, rgba(75, 224, 110, 0.13), transparent 30%),
-    linear-gradient(170deg, #050c08 0%, #08120b 55%, #0b160f 100%);
+    linear-gradient(170deg, #142018 0%, #18261c 55%, #1c2c20 100%);
 }
 
 .theme-dev .panel,
@@ -2420,7 +2420,7 @@ button:focus-visible {
   background:
     radial-gradient(circle at 85% 12%, rgba(255, 144, 88, 0.28), transparent 30%),
     radial-gradient(circle at 10% 80%, rgba(255, 197, 120, 0.12), transparent 28%),
-    linear-gradient(150deg, #180a08 0%, #24100d 45%, #34150f 100%);
+    linear-gradient(150deg, #2a1814 0%, #36211a 45%, #422620 100%);
 }
 
 .theme-sysiphus .btn-primary {
@@ -2439,12 +2439,12 @@ button:focus-visible {
   --scrub-bg-far: 16 33 60;
   background:
     radial-gradient(circle at 80% 10%, rgba(76, 162, 255, 0.25), transparent 30%),
-    linear-gradient(155deg, #070d19 0%, #0b1628 55%, #10213c 100%);
+    linear-gradient(155deg, #1a2538 0%, #1f2c41 55%, #25344c 100%);
 }
 
 .theme-ares .panel,
 .theme-ares .project-card {
-  background: linear-gradient(180deg, rgba(15, 30, 54, 0.93), rgba(12, 24, 44, 0.9));
+  background: linear-gradient(180deg, rgba(36, 51, 73, 0.92), rgba(28, 41, 60, 0.88));
 }
 
 .theme-liftscope {
@@ -2455,7 +2455,7 @@ button:focus-visible {
   --accent-alt: #ffe8b5;
   background:
     radial-gradient(circle at 18% 8%, rgba(212, 168, 79, 0.25), transparent 25%),
-    linear-gradient(148deg, #121007 0%, #1a1709 48%, #221c0c 100%);
+    linear-gradient(148deg, #2a2415 0%, #322b18 48%, #3a321b 100%);
 }
 
 .theme-liftscope .btn-primary {
@@ -2471,7 +2471,7 @@ button:focus-visible {
   --accent-alt: #a4ecf7;
   background:
     radial-gradient(circle at 82% 18%, rgba(90, 195, 216, 0.24), transparent 30%),
-    linear-gradient(150deg, #061116 0%, #0a1c22 50%, #0c252d 100%);
+    linear-gradient(150deg, #14262c 0%, #1a3038 50%, #1e3a44 100%);
 }
 
 .theme-contact .btn-primary {
